@@ -8,7 +8,11 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> 120dcb1f7bf228cff7e2f4e86290bbe14a98070a
   });
   await app.listen(3000);
 }
