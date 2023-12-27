@@ -9,15 +9,19 @@ import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath:'.env',
-      isGlobal: true 
-
+      envFilePath: '.env',
+      isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.DB_URI),
+    MongooseModule.forRootAsync({
+      useFactory: async () => ({
+        uri: process.env.DB_URI,
+      }),
+    }),
     BookModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
+
