@@ -6,11 +6,16 @@ async function bootstrap() {
   try {
     const app = await NestFactory.create(AppModule, { cors: true });
 
+    // Enable global validation pipe
     app.useGlobalPipes(new ValidationPipe());
 
+    // Enable CORS (Cross-Origin Resource Sharing)
     app.enableCors();
 
+    // Listen on the specified port or use a default (e.g., 3000)
     const port = process.env.PORT || 3000;
+
+    // Start the application
     await app.listen(port);
 
     console.log(`Application is running on: http://localhost:${port}`);
