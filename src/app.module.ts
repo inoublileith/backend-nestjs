@@ -12,11 +12,11 @@ import { AuthModule } from './auth/auth.module';
       envFilePath: '.env',
       isGlobal: true,
     }),
-    MongooseModule.forRootAsync({
-      useFactory: async () => ({
-        uri: process.env.DB_URI,
-      }),
-    }),
+    MongooseModule.forRoot('mongodb://localhost:27017/yup-dashboard', {
+            useCreateIndex: true,
+            useUnifiedTopology: true,
+            useNewUrlParser: true,
+        }),
     BookModule,
     AuthModule,
   ],
