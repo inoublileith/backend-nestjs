@@ -14,7 +14,7 @@ async function bootstrap() {
 
     // Listen on the specified port or use a default (e.g., 3000)
     const port = process.env.PORT || 3000;
-    console.log(PORT);
+    console.log(port);
     // Start the application
     await app.listen(3000);
     
