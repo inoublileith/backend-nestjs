@@ -13,7 +13,7 @@ export class BookService {
     ){}
 
     async findAll(query :Query): Promise<Book[]>{
-        throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+     
         const resPerPage = 4 ;
         const currentPage = Number(query.page) || 1 ;
         const skip = resPerPage * (currentPage - 1 );
