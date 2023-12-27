@@ -12,7 +12,7 @@ import { AuthModule } from './auth/auth.module';
       envFilePath: '.env',
       isGlobal: true,
     }),
-    MongooseModule.forRoot('mongodb://localhost:27017/yup-dashboard', {
+    MongooseModule.forRoot('mongodb://127.0.0.1:27017/yup-dashboard', {
             useCreateIndex: true,
             useUnifiedTopology: true,
             useNewUrlParser: true,
