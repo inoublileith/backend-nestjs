@@ -32,7 +32,17 @@
 $ npm install
 ```
 
-## Running the app
+## Create a Docker image and run a container
+
+```bash
+$ npm run build
+
+$ docker build -t nestjs-api .
+
+$ docker run -p 3000:3000 -d -e NODE_ENV=production -e DB_URI="mongoURI" -e PORT=3000 --name yup-dash nestjs-api
+```
+
+## Running the app in local
 
 ```bash
 # development
