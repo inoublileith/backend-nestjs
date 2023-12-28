@@ -9,13 +9,12 @@ import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath:'.env',
-      isGlobal: true 
-
+      envFilePath: '.env',
+      isGlobal: true,
     }),
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/yup-dashboard'),
+    MongooseModule.forRoot(process.env.DB_URI),
     BookModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
